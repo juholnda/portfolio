@@ -136,8 +136,12 @@ border-radius:2px;
 height:100vh;
 display:flex;
 align-items:center;
+justify-content:center; 
+text-align:center;       
 padding:0 10%;
 }
+
+
 
 .hero h1{
 font-size:52px;
@@ -153,6 +157,8 @@ color:transparent;
 .hero p{
 margin-top:20px;
 font-size:18px;
+margin:20px auto 0 auto;
+text-align:center;
 max-width:500px;
 opacity:0.8;
 }
@@ -163,7 +169,6 @@ opacity:0.8;
 font-size:22px;
 font-weight:600;
 color:#ffffff;
-text-shadow:0 0 10px rgba(255,255,255,0.8);
 
 border-right:4px solid white;
 
@@ -171,14 +176,17 @@ white-space:nowrap;
 overflow:hidden;
 
 display:inline-block;
+margin:0 auto;
+
 width:0;
+max-width:max-content;
 
 animation:typing 4s steps(40,end) forwards, blink .8s infinite;
 }
 
 @keyframes typing{
 from{width:0}
-to{width:max-content}
+to{width:38ch}
 }
 
 @keyframes blink{
@@ -522,6 +530,7 @@ text-align:center;
 padding:40px;
 opacity:0.5;
 font-size:14px;
+margin-top:-120px;
 }
 
 .skills-floating{
@@ -662,7 +671,7 @@ display:block;
 
 .cert-img{
 width:100%;
-height:200px; /* antes tava grande */
+height:200px;  
 object-fit:cover;
 border-radius:10px;
 margin-bottom:10px;
@@ -705,8 +714,8 @@ flex-wrap:wrap;
 }
 
 #projetosV .card{
-width:500px;      /* mais largo */
-padding:20px;     /* bem menor */
+width:500px;      
+padding:20px;     
 display:flex;
 height:100%;
 gap:20px;
@@ -765,6 +774,9 @@ opacity:0.85;
 <li><a href="#sobre">Sobre</a></li>
 <li><a href="#vitrine">Portfólio</a></li>
 <li><a href="#contato">Contato</a></li>
+<li><a href="curriculo/CURRICULO JULIA EVELYN SANTIAGO DE HOLANDA.pdf" download>
+Currículo
+</a></li>
 </ul>
 
 </nav>
@@ -826,7 +838,7 @@ Tenho experiência com desenvolvimento front-end, criação de layouts e design 
 
 <div class="sobre-botoes">
 
-<a href="curriculo.pdf" download class="botao-bubble">
+<a href="curriculo/CURRICULO JULIA EVELYN SANTIAGO DE HOLANDA.pdf" download class="botao-bubble">
 Currículo
 </a>
 
@@ -1039,6 +1051,17 @@ Ver no GitHub
 
 </a>
 
+<a href="https://wa.me/5581986328864" target="_blank" class="contato-card">
+
+<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/wa-whatsapp-icon.png" class="contato-icon">
+
+<div class="contato-info">
+<h3>WhatsApp</h3>
+<p>+55 (81) 98632-8864</p>
+</div>
+
+</a>
+
 </div>
 
 </section>
@@ -1120,6 +1143,32 @@ btn.classList.remove("active")
 event.currentTarget.classList.add("active")
 
 }
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop - 200;
+const sectionHeight = section.offsetHeight;
+
+if (scrollY >= sectionTop) {
+current = section.getAttribute("id");
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove("active");
+
+if (link.getAttribute("href") === "#" + current) {
+link.classList.add("active");
+}
+});
+
+});
 
 </script>
 
