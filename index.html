@@ -768,91 +768,113 @@ opacity:0.85;
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
+@media (max-width: 768px){
+
+  section{
+    padding:100px 20px;
+  }
 
   nav{
-    padding:15px 5%;
+    padding:10px 10px;
+    justify-content:space-around
+  }
+
+  .logo{
+    font-size:18px;
   }
 
   nav ul{
-    display:none; /* depois tu pode transformar em menu hambúrguer */
+    gap:8px; 
+    width:100%;
+    justify-content:center;
   }
 
-  .hero h1{
-    font-size:32px;
-  }
-
-  .hero p{
-    font-size:15px;
+  nav ul li a{
+    font-size:10px;
   }
 
   .typing{
+    white-space: normal; /* permite quebrar linha */
+    width: auto;
+    border-right: none; /* tira o cursor piscando */
+    animation: none; /* remove a animação que causa bug */
+    text-align: center;
+  }
+
+  /* HERO continua igual, só ajusta tamanho */
+  .hero h1{
+    font-size:38px;
+  }
+
+  .nome{
+    font-size:20px;
+    text-align:center;
+  }
+
+  .hero p{
     font-size:16px;
   }
 
-  section{
-    padding:80px 5%;
+   .sobre-botoes{
+    display:flex;
+    justify-content:center;
+    align-items:center;
   }
 
-  /* SOBRE */
+  /* SOBRE mantém lado a lado, mas mais compacto */
   .sobre-container{
-    flex-direction:column;
+    gap:40px;
+    justify-content:center;
+  }
+
+  .sobre-texto{
+    max-width:90%;
     text-align:center;
   }
 
   .sobre-img img{
-    width:250px;
-    height:250px;
-    margin-top:20px;
+    width:280px;
+    height:280px;
   }
 
-  .nome{
-    font-size:22px;
-  }
-
-  .intro{
-    font-size:22px;
-  }
-
-  .stats{
-    flex-direction:column;
-  }
-
-  /* BOTÕES */
-  .sobre-botoes{
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  /* PROJETOS */
+  /* NÃO quebra os projetos, só reduz */
   #projetosV .card{
-    width:100%;
-    flex-direction:column;
+    width:90%;
+    max-width:500px;
   }
 
-  .proj-img{
-    height:200px;
-  }
-
-  /* VITRINE MENU */
+  /* vitrine continua horizontal */
   .vitrine-menu{
-    flex-direction:column;
+    flex-wrap:wrap;
     gap:10px;
   }
 
   .menu-item{
-    width:100%;
+    flex:1 1 30%;
   }
 
-  /* CONTATO */
-  .contato-card{
-    flex-direction:column;
-    text-align:center;
+  /* contato mais compacto */
+  .contato-box{
+    padding:20px;
   }
 
-  .contato-icon{
-    margin-bottom:10px;
+  .skills-floating{
+    justify-content:center;
+    gap:10px;
   }
+
+  .bubble{
+    font-size:12px;
+    padding:10px 15px;
+  }
+
+*{
+  max-width:100%;
+}
+
+html, body{
+  overflow-x:hidden;
+}
 
 }
 
