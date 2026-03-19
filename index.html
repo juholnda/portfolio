@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <title>Portfólio | Júlia Holanda</title>
 
@@ -236,6 +237,18 @@ color:transparent;
 font-size:30px;
 font-weight:700;
 margin-bottom:20px;
+border-right:4px solid white;
+
+white-space:nowrap;
+overflow:hidden;
+
+display:inline-block;
+margin:0 auto;
+
+width:0;
+max-width:max-content;
+
+animation:typing 8s steps(40,end) forwards, blink .8s infinite;
 }
 
 .sobre{
@@ -282,8 +295,8 @@ box-shadow:0 0 20px rgba(56,189,248,0.4);
 
 .sobre-img img{
 
-width:340px;
-height:340px;
+width:440px;
+height:440px;
 
 border-radius:50%;
 
@@ -754,6 +767,95 @@ opacity:0.85;
 
 }
 
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  nav{
+    padding:15px 5%;
+  }
+
+  nav ul{
+    display:none; /* depois tu pode transformar em menu hambúrguer */
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .typing{
+    font-size:16px;
+  }
+
+  section{
+    padding:80px 5%;
+  }
+
+  /* SOBRE */
+  .sobre-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .sobre-img img{
+    width:250px;
+    height:250px;
+    margin-top:20px;
+  }
+
+  .nome{
+    font-size:22px;
+  }
+
+  .intro{
+    font-size:22px;
+  }
+
+  .stats{
+    flex-direction:column;
+  }
+
+  /* BOTÕES */
+  .sobre-botoes{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  /* PROJETOS */
+  #projetosV .card{
+    width:100%;
+    flex-direction:column;
+  }
+
+  .proj-img{
+    height:200px;
+  }
+
+  /* VITRINE MENU */
+  .vitrine-menu{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .menu-item{
+    width:100%;
+  }
+
+  /* CONTATO */
+  .contato-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .contato-icon{
+    margin-bottom:10px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -767,7 +869,7 @@ opacity:0.85;
 
 <nav>
 
-<div class="logo">JH</div>
+<div class="logo">portfólio</div>
 
 <ul>
 <li><a href="#home">Home</a></li>
